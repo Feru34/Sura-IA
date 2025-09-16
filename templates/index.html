@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>AI PDF Analyst · Azure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Inter (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img src="{{ url_for('static', filename='sura.svg') }}" alt="Azure" class="azure-logo" />
+      <span class="brand-text">AI PDF Analyst</span>
+    </div>
+    <div class="header-right">
+      <span class="tag">Flask</span>
+      <span class="tag">OpenAI</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 class="title">Analiza tu PDF con IA</h1>
+      <p class="subtitle">
+        Sube un PDF de políticas contables o estados financieros y formula tu pregunta. 
+        El asistente (gpt-5-nano) responderá con un análisis claro y citando el contenido proporcionado.
+      </p>
+
+      <form id="analyze-form" class="form" enctype="multipart/form-data">
+        <div class="form-field">
+          <label for="pdf" class="label">Archivo PDF</label>
+          <input id="pdf" name="pdf" type="file" accept=".pdf" class="input-file" required />
+          <small class="hint">Máx. 20 MB — se procesa localmente en el servidor</small>
+        </div>
+
+        <div class="form-field">
+          <label for="question" class="label">Pregunta</label>
+          <textarea id="question" name="question" rows="3" class="textarea" placeholder="Ej: ¿Qué se considera 'efectivo y equivalentes de efectivo' según la política?" required></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Analizar</button>
+          <button class="btn btn-secondary" type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="result-card" class="card result-card hidden">
+      <h2 class="title">Resultado</h2>
+      <pre id="result" class="result"></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Management Solutions</p>
+  </footer>
+
+  <div id="backdrop" class="backdrop hidden">
+    <div class="loader"></div>
+    <div class="loader-text">Analizando PDF…</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('analyze-form');
+    const resultCard = document.getElementById('result-card');
+    const resultEl = document.getElementById('result');
+    const backdrop = document.getElementById('backdrop');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      resultCard.classList.add('hidden');
+      resultEl.textContent = '';
+      backdrop.classList.remove('hidden');
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch('/analyze', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          throw new Error(data.error || 'Error desconocido');
+        }
+        resultEl.textContent = data.answer;
+        resultCard.classList.remove('hidden');
+      } catch (err) {
+        resultEl.textContent = '⚠️ ' + (err.message || err);
+        resultCard.classList.remove('hidden');
+      } finally {
+        backdrop.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
