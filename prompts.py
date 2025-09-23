@@ -4,8 +4,6 @@ import re
 from textwrap import dedent
 import os
 
-
-# --- NUEVO: referencia fija SURA para arrendamientos ---
 SURA_LEASE_POLICY = dedent("""
 Nota 2.4.6. Arrendamientos 
 Grupo SURA evalúa al inicio del contrato si un contrato es, o contiene, un arrendamiento. Es decir, si el contrato 
@@ -15,6 +13,7 @@ Grupo SURA aplica un enfoque único de reconocimiento y medición para todos los
 los arrendamientos a corto plazo y los arrendamientos de activos de bajo valor. Grupo SURA reconoce pasivos 
 por arrendamiento para realizar pagos por arrendamiento y activos por derecho de uso que representan el 
 derecho a usar los activos subyacentes. 
+
 Reconocimiento inicial 
 Grupo SURA reconoce los activos por derecho de uso en la fecha de comienzo del arrendamiento, es decir, la 
 fecha en que el activo subyacente está disponible para su uso. 
@@ -39,6 +38,117 @@ acumulación de intereses y reducido por los pagos de arrendamiento realizados. 
 de los pasivos por arrendamiento se vuelve a medir cuando haya una modificación, un cambio en el plazo del 
 arrendamiento, un cambio en los pagos del arrendamiento o un cambio en la evaluación de una opción para 
 comprar el activo subyacente.
+
+----------------------------------------------------------------------
+COASEGURO, REASEGURO E IMPAIRMENT DE ACTIVOS POR REASEGURO/COASEGURO
+Grupo SURA considera el coaseguro como la concurrencia acordada de dos o más entidades aseguradoras en
+la cobertura de un mismo riesgo; para los contratos de coaseguros la responsabilidad de cada aseguradora 
+frente al asegurado es limitada a su porcentaje de participación en el negocio. 
+Grupos SURA reconoce en el estado de situación financiera el saldo derivado de las operaciones de coaseguro 
+con base en el porcentaje de participación pactado en el contrato de seguro. 
+Grupo SURA considera que un activo por reaseguro y coaseguro se encuentra deteriorado y reducirá su valor en 
+libros y reconocerá los efectos en el resultado, sí y sólo si: 
+- Existe evidencia objetiva, a consecuencia de un evento que haya ocurrido después del reconocimiento inicial 
+  del activo por reaseguro, de que el cedente puede no recibir todos los importes que se le adeuden en función 
+  de los términos del contrato, y 
+- Ese evento tenga un efecto que se puede medir con fiabilidad sobre los importes que el cedente vaya a 
+  recibir de la compañía reaseguradora. 
+Los activos por contratos de reaseguro son evaluados por deterioro mínimo una vez al año para detectar
+cualquier evento que pueda provocar deterioro al valor de estos. Los factores desencadenantes pueden incluir 
+disputas legales con terceras partes, cambios en el capital y en los niveles de superávit, modificaciones a las 
+calificaciones de crédito de contraparte y una experiencia histórica respecto al cobro de las respectivas 
+compañías reaseguradoras. 
+
+----------------------------------------------------------------------
+PASIVOS ESTIMADOS DE CONTRATOS DE SEGUROS 
+Los pasivos estimados por contratos de seguros representan para Grupo SURA la mejor estimación sobre los 
+pagos futuros a efectuar por los riesgos asumidos en las obligaciones de seguro, los cuales se miden y se 
+reconocen como un pasivo. 
+Los pasivos estimados de contratos de seguro para Grupo SURA son: 
+a) Pasivos estimados de contratos de seguros por reclamos. Son provisiones constituidas para reflejar el costo 
+   estimado de siniestros que han ocurrido y no han sido pagados. En esta categoría se incluyen: 
+   - Pasivos estimados de contratos de seguros de siniestros avisados no liquidados. Corresponde a las 
+     provisiones y gastos directos de liquidación por siniestros avisados. El pasivo se reconoce en la fecha en 
+     que el asegurado y/o beneficiario notifica la ocurrencia del siniestro cubierto y es sometida a un recálculo 
+     mensual; 
+   - Pasivos estimados de siniestros ocurridos no avisados (IBNR). Corresponde a las provisiones para reflejar 
+     aquellos siniestros que han ocurrido pero que a la fecha del periodo sobre el que se informa no han sido 
+     reportados por el asegurado y/o beneficiario. 
+   La estimación de la reserva de siniestros ocurridos no avisados se determina utilizando una variedad de 
+   técnicas estándar de proyección de siniestros actuariales. 
+   La suposición principal subyacente a estas técnicas es la experiencia del desarrollo de siniestros pasados 
+   de las compañías de Grupo SURA que se puedan utilizar para proyectar el desarrollo futuro de los 
+   siniestros y su costo final. Estos métodos extrapolan el desarrollo de pérdidas pagadas e incurridas, el 
+   costo promedio por reclamo y los números de reclamación basados en el desarrollo observado de años 
+   anteriores y las relaciones de pérdidas esperadas. 
+   El desarrollo histórico de siniestros se analiza principalmente por años de ocurrencia, pero también puede 
+   ser analizado por ramos, productos y tipos de reclamación. Los grandes siniestros suelen ser tratados por 
+   separado, ya sea reservándose por el valor estimado de los ajustadores de siniestros o proyectándose por 
+   separado para reflejar su desarrollo futuro. 
+   Un juicio cualitativo adicional se utiliza para evaluar hasta qué punto las tendencias pasadas pueden no 
+   aplicarse en el futuro, (por ejemplo, para reflejar ocurrencias únicas, cambios en factores externos o de 
+   mercado, condiciones económicas, niveles de inflación de siniestros, decisiones judiciales y legislación, 
+   así como factores internos como la mezcla de cartera, características de la política y procedimientos de 
+   manejo de siniestros) con el fin de llegar al costo final estimado de las siniestros que representa el valor 
+   esperado de las reclamaciones. 
+- Pasivos estimados por compromisos futuros. Son provisiones constituidas para reflejar los compromisos 
+  futuros esperados con los asegurados. 
+- Pasivo estimado de riesgos en curso. Es la provisión que se constituye para el cumplimiento de las 
+  obligaciones futuras derivadas de los compromisos asumidos en las pólizas vigentes a la fecha de cálculo. 
+  El pasivo estimado de riesgos en curso está compuesto por el pasivo de prima no devengada y el pasivo 
+  por la insuficiencia de primas. 
+  El pasivo estimado de prima no devengada representa la porción de las primas emitidas de las pólizas 
+  vigentes y de las primas emitidas de las pólizas con inicio de vigencia futura. 
+  El pasivo estimado por insuficiencia de primas complementará el pasivo de prima no devengada en la 
+  medida en que la prima no resulte suficiente para cubrir el riesgo en curso y los gastos no causados. 
+b) Pasivo actuarial. Es la provisión que se constituye para atender el pago de las obligaciones asumidas en los 
+   seguros de vida individual y en los amparos cuya prima se ha calculado en forma nivelada. También son 
+   seguros cuyo beneficio se paga en forma de renta. 
+c) Pasivo actuarial para seguros (excluye rentas vitalicias). Son provisiones calculadas sobre la base del método 
+   actuarial, tomando las condiciones actuales de los contratos de seguros. La provisión se determina como la 
+   suma del valor presente de los beneficios futuros esperados, el manejo de reclamaciones y los gastos de 
+   administración de las pólizas, las opciones y las garantías y la utilidad de las inversiones de activos que 
+   respaldan los pasivos, los cuales están directamente relacionados con el contrato, menos el valor 
+   descontado de las primas que se espera que se requieren para cumplir con los pagos futuros basados en las 
+   hipótesis de valoración utilizadas. 
+d) Pasivo actuarial para rentas vitalicias. La provisión es calculada sobre la base del valor presente de los 
+   beneficios futuros comprometidos según el contrato y los gastos operacionales directos en los que la 
+   compañía incurrirá para el pago de los compromisos del contrato. 
+e) Pasivos estimados de primas no devengadas. Son provisiones constituidas para los seguros de corto plazo, 
+   tanto colectivos como individuales, en los que la periodicidad de pago de prima difiere de la vigencia de la 
+   cobertura y en consecuencia, se ha recibido una prima por el riesgo futuro, la cual debe ser provisionada. La 
+   provisión es determinada como la prima ingresada neta de gastos y es amortizada en el plazo de cobertura. 
+f) Pasivos estimados por componentes de depósito (ahorro) en seguros de vida o reserva de valor del fondo. 
+   Es una provisión, que se reconoce inicialmente a valor razonable con cambios a resultados (precio de la 
+   póliza excluyendo los gastos de emisión de esta) y posteriormente los depósitos y retiros son reconocidos 
+   como ajustes a la provisión. El valor razonable de los contratos con unidades (unit-linked) son determinados 
+   como el producto de la cantidad de unidades alocadas a cada fondo a la fecha de reporte y el precio unitario 
+   de las unidades de cada fondo a la misma fecha. 
+g) Pasivos estimados de insuficiencia de activos. Es una provisión que se constituye para compensar la
+   insuficiencia que puede surgir al cubrir los flujos de pasivos esperados que conforman el pasivo actuarial con 
+   los flujos de activos de la entidad aseguradora. 
+h) Pasivos estimados de siniestros pendientes. Es la provisión que se constituye para atender el pago de los 
+   siniestros ocurridos una vez avisados o para garantizar la cobertura de los no avisados, a la fecha de cálculo. 
+   El pasivo estimado de siniestros pendientes está compuesto por el pasivo de siniestros avisados y el pasivo 
+   de siniestros ocurridos no avisados. 
+   El pasivo de siniestros avisados corresponde al monto de recursos que se debe destinar para atender los 
+   pagos de los siniestros ocurridos una vez estos hayan sido avisados, así como los gastos asociados a estos, 
+   a la fecha de cálculo de este pasivo. 
+   El pasivo de siniestros ocurridos no avisados representa una estimación del monto de recursos que se debe 
+   destinar para atender los futuros pagos de siniestros que ya han ocurrido, a la fecha de cálculo de este pasivo, 
+   pero que todavía no han sido avisados a la entidad aseguradora o para los cuales no se cuenta con suficiente 
+   información. 
+i) Derivados implícitos. Los derivados implícitos en contratos de seguro son separados si no se considera que 
+   están estrechamente relacionados con el contrato de seguro principal y no cumplen con la definición de un 
+   contrato de seguro. 
+   Estos derivados implícitos se presentan por separado en la categoría de instrumentos financieros y se miden 
+   a valor razonable con cambios en resultados. 
+
+Prueba de adecuación de pasivos estimados de contratos de seguro 
+Las provisiones técnicas registradas son sujetas a una prueba de razonabilidad como mínimo una vez al año, 
+con el objetivo de determinar su suficiencia sobre la base de proyecciones de todos los flujos de caja futuros de 
+los contratos vigentes. Si como consecuencia de esta prueba se pone de manifiesto que las mismas son 
+insuficientes, son ajustadas con cargo a resultados del ejercicio.
 """).strip()
 
 

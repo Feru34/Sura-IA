@@ -37,6 +37,7 @@ Grupo SURA aplica un enfoque único de reconocimiento y medición para todos los
 los arrendamientos a corto plazo y los arrendamientos de activos de bajo valor. Grupo SURA reconoce pasivos 
 por arrendamiento para realizar pagos por arrendamiento y activos por derecho de uso que representan el 
 derecho a usar los activos subyacentes. 
+
 Reconocimiento inicial 
 Grupo SURA reconoce los activos por derecho de uso en la fecha de comienzo del arrendamiento, es decir, la 
 fecha en que el activo subyacente está disponible para su uso. 
@@ -61,387 +62,257 @@ acumulación de intereses y reducido por los pagos de arrendamiento realizados. 
 de los pasivos por arrendamiento se vuelve a medir cuando haya una modificación, un cambio en el plazo del 
 arrendamiento, un cambio en los pagos del arrendamiento o un cambio en la evaluación de una opción para 
 comprar el activo subyacente.
+
+----------------------------------------------------------------------
+COASEGURO, REASEGURO E IMPAIRMENT DE ACTIVOS POR REASEGURO/COASEGURO
+Grupo SURA considera el coaseguro como la concurrencia acordada de dos o más entidades aseguradoras en
+la cobertura de un mismo riesgo; para los contratos de coaseguros la responsabilidad de cada aseguradora 
+frente al asegurado es limitada a su porcentaje de participación en el negocio. 
+Grupos SURA reconoce en el estado de situación financiera el saldo derivado de las operaciones de coaseguro 
+con base en el porcentaje de participación pactado en el contrato de seguro. 
+Grupo SURA considera que un activo por reaseguro y coaseguro se encuentra deteriorado y reducirá su valor en 
+libros y reconocerá los efectos en el resultado, sí y sólo si: 
+- Existe evidencia objetiva, a consecuencia de un evento que haya ocurrido después del reconocimiento inicial 
+  del activo por reaseguro, de que el cedente puede no recibir todos los importes que se le adeuden en función 
+  de los términos del contrato, y 
+- Ese evento tenga un efecto que se puede medir con fiabilidad sobre los importes que el cedente vaya a 
+  recibir de la compañía reaseguradora. 
+Los activos por contratos de reaseguro son evaluados por deterioro mínimo una vez al año para detectar
+cualquier evento que pueda provocar deterioro al valor de estos. Los factores desencadenantes pueden incluir 
+disputas legales con terceras partes, cambios en el capital y en los niveles de superávit, modificaciones a las 
+calificaciones de crédito de contraparte y una experiencia histórica respecto al cobro de las respectivas 
+compañías reaseguradoras. 
+
+----------------------------------------------------------------------
+PASIVOS ESTIMADOS DE CONTRATOS DE SEGUROS 
+Los pasivos estimados por contratos de seguros representan para Grupo SURA la mejor estimación sobre los 
+pagos futuros a efectuar por los riesgos asumidos en las obligaciones de seguro, los cuales se miden y se 
+reconocen como un pasivo. 
+Los pasivos estimados de contratos de seguro para Grupo SURA son: 
+a) Pasivos estimados de contratos de seguros por reclamos. Son provisiones constituidas para reflejar el costo 
+   estimado de siniestros que han ocurrido y no han sido pagados. En esta categoría se incluyen: 
+   - Pasivos estimados de contratos de seguros de siniestros avisados no liquidados. Corresponde a las 
+     provisiones y gastos directos de liquidación por siniestros avisados. El pasivo se reconoce en la fecha en 
+     que el asegurado y/o beneficiario notifica la ocurrencia del siniestro cubierto y es sometida a un recálculo 
+     mensual; 
+   - Pasivos estimados de siniestros ocurridos no avisados (IBNR). Corresponde a las provisiones para reflejar 
+     aquellos siniestros que han ocurrido pero que a la fecha del periodo sobre el que se informa no han sido 
+     reportados por el asegurado y/o beneficiario. 
+   La estimación de la reserva de siniestros ocurridos no avisados se determina utilizando una variedad de 
+   técnicas estándar de proyección de siniestros actuariales. 
+   La suposición principal subyacente a estas técnicas es la experiencia del desarrollo de siniestros pasados 
+   de las compañías de Grupo SURA que se puedan utilizar para proyectar el desarrollo futuro de los 
+   siniestros y su costo final. Estos métodos extrapolan el desarrollo de pérdidas pagadas e incurridas, el 
+   costo promedio por reclamo y los números de reclamación basados en el desarrollo observado de años 
+   anteriores y las relaciones de pérdidas esperadas. 
+   El desarrollo histórico de siniestros se analiza principalmente por años de ocurrencia, pero también puede 
+   ser analizado por ramos, productos y tipos de reclamación. Los grandes siniestros suelen ser tratados por 
+   separado, ya sea reservándose por el valor estimado de los ajustadores de siniestros o proyectándose por 
+   separado para reflejar su desarrollo futuro. 
+   Un juicio cualitativo adicional se utiliza para evaluar hasta qué punto las tendencias pasadas pueden no 
+   aplicarse en el futuro, (por ejemplo, para reflejar ocurrencias únicas, cambios en factores externos o de 
+   mercado, condiciones económicas, niveles de inflación de siniestros, decisiones judiciales y legislación, 
+   así como factores internos como la mezcla de cartera, características de la política y procedimientos de 
+   manejo de siniestros) con el fin de llegar al costo final estimado de las siniestros que representa el valor 
+   esperado de las reclamaciones. 
+- Pasivos estimados por compromisos futuros. Son provisiones constituidas para reflejar los compromisos 
+  futuros esperados con los asegurados. 
+- Pasivo estimado de riesgos en curso. Es la provisión que se constituye para el cumplimiento de las 
+  obligaciones futuras derivadas de los compromisos asumidos en las pólizas vigentes a la fecha de cálculo. 
+  El pasivo estimado de riesgos en curso está compuesto por el pasivo de prima no devengada y el pasivo 
+  por la insuficiencia de primas. 
+  El pasivo estimado de prima no devengada representa la porción de las primas emitidas de las pólizas 
+  vigentes y de las primas emitidas de las pólizas con inicio de vigencia futura. 
+  El pasivo estimado por insuficiencia de primas complementará el pasivo de prima no devengada en la 
+  medida en que la prima no resulte suficiente para cubrir el riesgo en curso y los gastos no causados. 
+b) Pasivo actuarial. Es la provisión que se constituye para atender el pago de las obligaciones asumidas en los 
+   seguros de vida individual y en los amparos cuya prima se ha calculado en forma nivelada. También son 
+   seguros cuyo beneficio se paga en forma de renta. 
+c) Pasivo actuarial para seguros (excluye rentas vitalicias). Son provisiones calculadas sobre la base del método 
+   actuarial, tomando las condiciones actuales de los contratos de seguros. La provisión se determina como la 
+   suma del valor presente de los beneficios futuros esperados, el manejo de reclamaciones y los gastos de 
+   administración de las pólizas, las opciones y las garantías y la utilidad de las inversiones de activos que 
+   respaldan los pasivos, los cuales están directamente relacionados con el contrato, menos el valor 
+   descontado de las primas que se espera que se requieren para cumplir con los pagos futuros basados en las 
+   hipótesis de valoración utilizadas. 
+d) Pasivo actuarial para rentas vitalicias. La provisión es calculada sobre la base del valor presente de los 
+   beneficios futuros comprometidos según el contrato y los gastos operacionales directos en los que la 
+   compañía incurrirá para el pago de los compromisos del contrato. 
+e) Pasivos estimados de primas no devengadas. Son provisiones constituidas para los seguros de corto plazo, 
+   tanto colectivos como individuales, en los que la periodicidad de pago de prima difiere de la vigencia de la 
+   cobertura y en consecuencia, se ha recibido una prima por el riesgo futuro, la cual debe ser provisionada. La 
+   provisión es determinada como la prima ingresada neta de gastos y es amortizada en el plazo de cobertura. 
+f) Pasivos estimados por componentes de depósito (ahorro) en seguros de vida o reserva de valor del fondo. 
+   Es una provisión, que se reconoce inicialmente a valor razonable con cambios a resultados (precio de la 
+   póliza excluyendo los gastos de emisión de esta) y posteriormente los depósitos y retiros son reconocidos 
+   como ajustes a la provisión. El valor razonable de los contratos con unidades (unit-linked) son determinados 
+   como el producto de la cantidad de unidades alocadas a cada fondo a la fecha de reporte y el precio unitario 
+   de las unidades de cada fondo a la misma fecha. 
+g) Pasivos estimados de insuficiencia de activos. Es una provisión que se constituye para compensar la
+   insuficiencia que puede surgir al cubrir los flujos de pasivos esperados que conforman el pasivo actuarial con 
+   los flujos de activos de la entidad aseguradora. 
+h) Pasivos estimados de siniestros pendientes. Es la provisión que se constituye para atender el pago de los 
+   siniestros ocurridos una vez avisados o para garantizar la cobertura de los no avisados, a la fecha de cálculo. 
+   El pasivo estimado de siniestros pendientes está compuesto por el pasivo de siniestros avisados y el pasivo 
+   de siniestros ocurridos no avisados. 
+   El pasivo de siniestros avisados corresponde al monto de recursos que se debe destinar para atender los 
+   pagos de los siniestros ocurridos una vez estos hayan sido avisados, así como los gastos asociados a estos, 
+   a la fecha de cálculo de este pasivo. 
+   El pasivo de siniestros ocurridos no avisados representa una estimación del monto de recursos que se debe 
+   destinar para atender los futuros pagos de siniestros que ya han ocurrido, a la fecha de cálculo de este pasivo, 
+   pero que todavía no han sido avisados a la entidad aseguradora o para los cuales no se cuenta con suficiente 
+   información. 
+i) Derivados implícitos. Los derivados implícitos en contratos de seguro son separados si no se considera que 
+   están estrechamente relacionados con el contrato de seguro principal y no cumplen con la definición de un 
+   contrato de seguro. 
+   Estos derivados implícitos se presentan por separado en la categoría de instrumentos financieros y se miden 
+   a valor razonable con cambios en resultados. 
+
+Prueba de adecuación de pasivos estimados de contratos de seguro 
+Las provisiones técnicas registradas son sujetas a una prueba de razonabilidad como mínimo una vez al año, 
+con el objetivo de determinar su suficiencia sobre la base de proyecciones de todos los flujos de caja futuros de 
+los contratos vigentes. Si como consecuencia de esta prueba se pone de manifiesto que las mismas son 
+insuficientes, son ajustadas con cargo a resultados del ejercicio.
     </REFERENCIA_SURA_ARRENDAMIENTOS>
 
     <INPUT>
-    Esto es lo reportado en el estado financerio de SIM en el pais México en año 2024 : 5.
-
-Debido a la complejidad de la valuación, los supuestos subyacentes y la naturaleza de largo
-plazo de las obligaciones por beneficios definidos, tales estimaciones son sensibles a los
-cambios en los supuestos por lo que son sujetas a una incert idumbre significativa. La Nota 9
-presenta el detalle de los supuestos utilizados.
-
-- Estimación de cuentas de dudosa recuperación
-
-Los importes correspondientes a los deudores identificados cuyo vencimiento se pacte desde
-su origen a un plazo mayor a 90 días naturales, deberán crear, en su caso, una estimación que
-refleje su grado de irrecuperabilidad, dicha estimación se evalúa considerando los diferentes
-eventos futuros cuantificables que pudieran afectar la recuperación de los derechos exigibles y
-se reservan con cargo a los otros ingresos (gastos) de la operación. No se constituirá estimación
-por irrecuperabilidad o difícil c obro p or los relativos a saldos por recuperar de impuestos e
-impuesto al valor agregado acreditable.
-
-- Arrendamientos
-
-• Determinación del plazo de arrendamiento en contratos con opciones de renovación y
-terminación – La Compañía como arrendatario
-
-La Operadora determina el plazo del arrendamiento como el periodo no cancelable de un
-arrendamiento, junto con los periodos cubiertos por una opción para extender el
-arrendamiento, si hay certeza razonable que la Operadora va a ejercer esa opción, o los
-periodos cubiertos por una opción para terminar el arrendamiento, si hay certeza razonable que
-la Compañía no va a ejercer esa opción.
-
-La Operadora tiene varios contratos de arrendamiento que incluyen opciones de renovación y
-de terminación. La Operadora aplica su juicio para evaluar si existe certeza razonable de que va
-a ejercer la opción para renovar o cancelar un arrendamiento. Es decir, considera todos los
-hechos y circunstancias relevantes que generan un incentivo económico para ejercer la opción
-de renovación o terminación. Después de la fecha de comienzo del arrendamiento, la Compañía
-evaluará nuevamente el plazo del arrendamiento en caso de que ocurra un suceso o cambio
-significativo en las circunstancias que esté dentro del control de la Compañía y que afecte su
-capacidad de ejercer o no la opción de renovación o terminación (p. ej., construcción de mejoras
-significativas a locale s arrendados o personalización significativa del activo arrendado).
-
-e) Efectivo y equivalentes de efectivo
-
-El efectivo y equivalentes de efectivo están representadas principalmente por depósitos
-bancarios , los cuales se presentan valuados a su valor nominal . Los equivalentes de efectivo
-son valores a corto plazo, de alta liquidez, fácilmente convertibles en efectivo, que están sujetos
-a riesgos poco importantes de cambios en su valor y se mantienen para cumplir compromisos
-de corto plazo más que para propósitos de inversión; pueden estar denominados en moneda
-nacional o extranjera .
-
-6.
-
-f) Instrumentos financieros
-
-i) Activos financieros
-
-Reconocimiento inicial y valuación
-
-Los instrumentos financieros son cualquier derecho u obligación que surge de un contrato, que
-origina un activo financiero en una entidad y un pasivo financiero o instrumento de capital en la
-contraparte.
-
-Al momento de su reconocimiento inicial, la Operadora valúa las inversiones en instrumentos
-financieros negociables (“IFN”) y en instrumentos financieros para cobrar o vender (“IFCV”) a
-su valor razonable, con base en lo establecido en la NIF B -17 “Determinación del valor
-razonable”. Con posterioridad a su reconocimiento inicial, los activos financieros se clasifican
-de la siguiente manera: como activos financieros valuados subsecuentemente a su costo
-amortizado (instru mentos para cobrar principal e interés “IFCPI”), a valor razonable con
-cambios en ORI (IFCV) y a valor razonable con cambios en resultados (IFN).
-
-La clasificación de los activos financieros al momento de su reconocimiento inicial depende de
-las características contractuales de los flujos de efectivo del activo financiero y el modelo de
-negocio de la Operadora para administrar dichos activos. Con exce pción de las cuentas por
-cobrar que no contienen un componente importante de financiamiento, la Operadora
-inicialmente valúa un activo financiero a su valor razonable más, en el caso de los activos
-financieros que no estén medidos al valor razonable con c ambios en resultados, los costos de
-transacción.
-
-Las cuentas por cobrar que no contienen un componente importante de financiamiento se
-valúan al precio de la transacción determinado de conformidad con la NIF D -1 “Ingresos por
-contratos con clientes”, así como la NIF C -20 “Instrumentos financieros para co brar principal e
-interés”
-
-Para que un activo financiero pueda clasificarse y valuarse a su costo amortizado o a valor
-razonable con cambios en ORI, dicho activo debe dar lugar a flujos de efectivo que sean
-exclusivamente pagos de principal e intereses (IFCPI) respecto del monto de c apital pendiente.
-Dicha evaluación se conoce como la prueba de instrumento financiero para cobrar principal e
-interés y se realiza a nivel de instrumento. Los activos financieros con flujos de efectivo que no
-son exclusivamente para pagos de principal e i ntereses se clasifican y valúan a su valor
-razonable con cambios en resultados, independientemente del modelo de negocios.
-
-El modelo de negocio de la Operadora para administrar sus activos financieros se refiere a la
-forma en como administra sus activos financieros para generar flujos de efectivo para el negocio
-al llevar a cabo sus actividades y no en una intención particular de tenencia de un instrumento.
-El modelo de negocio determina si los flujos de efectivo se derivarán de obtener flujos de
-efectivo contractuales, de la venta de activos financieros, o de ambos.
-
-7.
-
-Los activos financieros que se clasifican y valúan a su costo amortizado se mantienen en un
-modelo de negocio cuyo objetivo es mantener los activos financieros para obtener flujos de
-efectivo contractuales, mientras que los activos financieros que se clasif ican y valúan a su valor
-razonable con cambios en ORI se mantienen en un modelo de negocio cuyo objetivo es obtener
-flujos de efectivo contractuales, la venta de los activos financieros o ambos.
-
-Las compras o ventas de activos financieros que requieren la entrega de activos dentro de un
-marco de tiempo establecido por una regulación o convenio del mercado (regular -way trades,
-como se conocen en inglés) se reconocen en la fecha de negociación; es de cir, la fecha en la
-que la Operadora se compromete a comprar o a vender el activo.
-
-Al 31 de diciembre de 2024 y 2023 , los activos financieros están representados principalmente
-por inversiones e n valores, correspondientes a las acciones de los fondos de inversión en
-instrumentos de deuda y de renta variable que administra la Operadora, correspondientes a la
-serie “B” ; y por las cuentas por cobrar provenientes de servicios administrativos y gestión de
-cartera, así como saldos de cuentas por cobrar con partes relacionadas y saldos por recuperar
-de impuestos.
-
-Reconocimiento posterior
-
-Para fines de su reconocimiento posterior, los activos financieros se clasifican en las siguientes
-categorías:
-
-Activos financieros a valor razonable con cambios en resultados
-
-Los activos financieros a valor razonable con cambios en resultados incluyen los activos
-financieros mantenidos para fines de negociación (instrumentos financieros negociables (IFN),
-activos financieros designados al momento de su reconocimiento inicial a valor razonable con
-cambios en resultados, o activos fina ncieros que obligatoriamente deben ser medidos a valor
-razonable. Los activos financieros se clasifican como mantenidos para fines de negociación si
-se adquieren con el propósito de ser vendidos o recomprados en un futuro cercano. Los
-derivados, incluidos los derivados implícitos separados, también se clasifican como mantenidos
-para fines de negociación, salvo que sean designados como instrumentos de cobertura efectiva.
-Los activos financieros con flujos de efectivo que no son solamente pagos de capital e i ntereses
-se clasifican y se valúan a su valor razonable con cambios en resultados, sin importar el modelo
-de negocios. Sin importar los criterios para que los instrumentos de deuda sean clasificados a
-su costo amortizado o a valor razonable con cambios en ORI, como se describió anteriormente,
-los instrumentos de deuda pueden designarse como a valor razonable con cambios en
-resultados al momento de su reconocimiento inicial si al hacer esto se elimina, o reduce
-significativamente, una asimetría contable.
-
-Los activos financieros medidos a su valor razonable con cambios en resultados se reconocen
-en el estado de situación financiera a valor razonable, y los cambios netos en el valor razonable
-se reconocen en el estado de resultados.
-
-8.
-
-Baja de activos financieros
-
-Un activo financiero (o una parte de un activo financiero o una parte de un grupo de activos
-financieros similares) se da de baja principalmente (es decir, se elimina del estado de situación
-financiera de la Compañía) cuando:
-
-• Los derechos para recibir los flujos de efectivo del activo han expirado, o
-
-• La Compañía ha transferido sus derechos para recibir flujos de efectivo del activo o ha
-asumido la obligación de pagar los flujos de efectivo recibidos en su totalidad sin demora
-material para el tercero bajo un acuerdo "de transferencia" y (a) la Compañía ha
-transferido prácticamente todos los riesgos y beneficios del activo, o (b) la Compañía no
-ha transferido ni retiene sustancialmente todos los riesgos y beneficios del activo, pero
-ha transferi do el control del activo .
-
-Cuando la Compañía ha transferido sus derechos a recibir los flujos de efectivo de un activo o
-ha asumido la obligación de transferirlos bajo un acuerdo de transferencia, evalúa si han
-retenido los riesgos y beneficios de la propiedad y en qué medida los h a retenido. Cuando no
-ha transferido ni retenido sustancialmente todos los riesgos y beneficios del activo ni tampoco
-ha transferido el control del mismo, la Compañía sigue reconociendo el activo transferido en la
-medida de su involucramiento continuo en el mismo. En ese caso, la Compañía también
-reconoce el pasivo relacionado. El activo transferido y el pasivo relacionado se valúan sobre
-una base que refleje los derechos y obligaciones que la Compañía haya retenido.
-
-La participación continua que toma la forma de garantía sobre el activo transferido se valúa al
-menor entre el valor neto en libros original del activo y el monto máximo de la contraprestación
-que la Compañía estaría requerida a volver a pagar.
-
-g) Determinación del valor razonable
-
-La Compañía valúa los instrumentos financieros, a su valor razonable a la fecha de cierre de los
-estados financieros.
-
-El valor razonable es el precio de salida que sería recibido por vender un activo o pagado por
-transferir un pasivo en una transacción ordenada entre participantes del mercado a la fecha de
-valuación. Una determinación del valor razonable supone que la tra nsacción para vender el
-activo o transferir el pasivo tiene lugar:
-
-• En el mercado principal para el activo o pasivo, o
-• En ausencia de un mercado principal, el mercado más ventajoso para el activo o pasivo
-
-El mercado principal o el más ventajoso ha de ser un mercado accesible para la Operadora .
-
-El valor razonable de un activo o un pasivo se determina utilizando los supuestos que los
-participantes del mercado usarían para fijar el precio de dicho activo y pasivo, asumiendo que
-tales participantes del mercado actúan en su mejor beneficio económico.
-9.
-
-La Operadora utiliza las técnicas de valuación apropiadas en las circunstancias y con la
-suficiente información disponible para la determinación del valor razonable, maximizando el uso
-de datos de entrada relevantes observables y minimizando los datos de entrada no ob servables.
-
-Todos los activos y pasivos para los que se realizan determinaciones o revelaciones de su valor
-razonable en los estados financieros están categorizados dentro de la jerarquía de valor
-razonable que se describe a continuación, en base a la menor variable q ue sea significativa para
-la determinación del valor razonable en su conjunto:
-
-• Nivel 1 – Precio cotizado (sin ajustar) en mercados activos para activos o pasivos
-idénticos a los que la entidad puede acceder a la fecha de la valuación.
-
-• Nivel 2 – Aquellos datos distintos de los precios cotizados incluidos en el Nivel 1 que es
-observable para los activos o pasivos, directa o indirectamente.
-
-• Nivel 3 – Aquellos datos no observables para el activo o pasivo.
-
-Para activos y pasivos que son reconocidos en los estados financieros a su valor razonable de
-forma recurrente, la Operadora determina si han existido transferencias entre los distintos
-niveles de jerarquía mediante una revisión de su categorización (basada en la variable de menor
-nivel que es significativa para la determinación del valor razonable en su conjunto) al final de
-cada año.
-
-Para efectos de las revelaciones necesarias sobre el valor razonable, la Compañía ha
-determinado las distintas clases de activos y pasivos en función de su naturaleza,
-características, riesgos y niveles de jerarquía de valor razonable, tal y como se ha exp licado
-anteriormente.
-
-Las revelaciones relacionadas con el valor razonable de los instrumentos financieros y de los
-activos no financieros que se valúan a valor razonable o para los que se revela el valor razonable
-se incluyen en las siguientes notas:
-
-Las revelaciones de los métodos de valuación, estimaciones significativas y supuestos (Nota 4)
-Revelaciones cuantitativas de la jerarquía de valuaciones a valor razonabl e (Nota 4)
-
-h) Mobiliario y equipo , neto
-
-El mobiliario y equipo se reconoce inicialmente a su costo de adquisición, neto de su
-depreciación acumulada y de las pérdidas acumuladas por deterioro del valor. El valor de
-adquisición del mobiliario y equipo incluye los costos que se han incurrido inicialmente para ser
-adquiridos, así como los incurridos posteriormente para re emplazarlos o incrementar su
-servicio potencial. Los costos de reparación y mantenimiento se reconocen en el estado de
-resultado integral a medida que se incurren.
-
-10.
-
-La depreciación de mobiliario y equipo se determina sobre el valor de los activos, utilizando el
-método de línea recta (al ser considerado por la administración de la Operadora que dicho
-método es el que mejor refleja el uso de dichos activos) , y con base en su vida útil estimada,
-aplicando las siguientes tasas anuales:
-
-Concepto Porcentaje de
-depreciación
-Equipo de cómputo 30%
-Equipo de telecomunicaciones 25%
-Equipo de transporte 25%
-Mobiliario y equipo de oficina 10%
-
-Las mejoras a locales arrendados se capitalizan tomando como base el costo incurrido. La
-amortización se deter mina en línea recta en función de la duración del contrato de
-arrendamiento.
-
-El mobiliario y equipo se da de baja al momento de su venta o cuando no se espera obtener
-beneficios económicos futuros por su uso o venta. Cualquier ganancia o pérdida en el momento
-de dar de baja el activo (calculada como la diferencia entre el ingreso neto procedente de la
-venta del activo y su importe en libros), se incluye en el rubro de los otros ingresos (gastos) de
-la operación del estado de resultado integral .
-
-El valor del mobiliario y equipo se revisa cuando existen indicios de deterioro en el valor de
-dichos activos. Cuando el valor de recuperación, que es el mayor entre el p recio de venta y su
-valor de uso (el cual es el valor presente de los flujos de efectivo futuros), es inferior el valor
-neto en libros, la diferencia se reconoce como una pérdida por deterioro.
-
-Durante los años terminado s al 31 de diciembre de 2024 y 2023 , no existen indicios de
-deterioro.
-
-i) Arrendamientos
-
-Al comienzo de un contrato, la Compañía debe evaluar si el contrato es, o contiene, un
-arrendamiento. Es decir, si el contrato transfiere el derecho de uso de un activo identificado
-durante un periodo de tiempo determinado a cambio de una contraprestación. En caso
-contrario, se trata de un contrato de servicios.
-
-Al 31 de diciembre del 2024 y 2023, la Compañía tiene celebrados dos contratos de
-arrendamiento de inmuebles en moneda nacional, que utiliza como oficinas corporativas. Estos
-contratos tienen plazos de arrendamiento de 5 años.
-
-11.
-
-La Compañía como arrendatario
-
-La Compañía aplica un único enfoque para el reconocimiento y valuación de todos los
-arrendamientos, con excepción de los arrendamientos a corto plazo y los arrendamientos en
-los que el activo subyacente es de bajo valor (con base en su importancia relativa ). La Compañía
-reconoce pasivos por arrendamiento para realizar los pagos de arrendamiento y activos por
-derecho de uso que representan su derecho a utilizar los activos subyacentes.
-
-(i) Activos por derecho de uso
-
-Los activos por derecho de uso se reconocen en la fecha de comienzo del arrendamiento (es
-decir, la fecha en que el activo subyacente está disponible para su uso) y se valúan a su costo
-de adquisición, menos la depreciación acumulada y se ajustan para refl ejar cualquier
-remedición de los pasivos por arrendamiento. El costo de los activos por derecho de
-uso incluye el importe de la valuación inicial de los pasivos por arrendamiento reconocidos, los
-pagos por arrendamiento realizados antes o en la fecha de comienzo del arrendamiento menos
-cualquier incentivo de arrendamiento que se reciba y los costos directos iniciales incurridos por
-el arrendatario. Los activos por derecho de uso se deprecian sobre la base de línea recta durante
-el plazo del arrendamiento.
-
-(ii) Pasivos por arrendamiento
-
-En la fecha de comienzo del arrendamiento, la Compañía reconoce pasivos por arrendamiento
-valuados al valor presente de los pagos futuros por arrendamiento que se realizarán durante el
-periodo del arrendamiento. Los pagos por arrendamiento incluyen pagos fijos (incluyendo
-pagos fijos en sustancia), menos cualquier incentivo de arrendamiento por cobrar, pagos
-variables por arrendamiento que dependen de un índice o una tasa, y los importes que se espe ra
-pagar como garantías de valor residual. Los pagos por arrendamiento también incluyen el precio
-de ejercicio de una opción de compra si la Compañía tiene certeza razonable de que la ejercerá
-y los pagos de penalizaciones por rescisión del contrato de arr endamiento, si el plazo del
-arrendamiento refleja que la Compañía ejercerá una opción para terminar el arrendamiento.
-
-Los pagos que no dependen en un índice o tasa se reconocen como gastos (salvo que se hayan
-incurrido para producir inventarios) en el periodo en el cual ocurre el evento o condición que
-genera el pago.
-
-Para calcular el valor presente de los pagos por arrendamiento, la Compañía utiliza su tasa
-incremental de financiamiento en la fecha de comienzo del arrendamiento, dado que la tasa de
-interés implícita en el arrendamiento no puede determinarse con facilid ad. Después de la fecha
-de comienzo del arrendamiento, el monto de los pasivos por arrendamiento se incrementa para
-reflejar la acumulación de intereses devengados y se reduce en proporción a los pagos por
-arrendamiento realizados. Adicionalmente, el valor en libros de los pasivos por arrendamiento
-se vuelve a medir cuando se presenta una modificación, un cambio en el plazo del
-arrendamiento, un cambio en los pagos por arrendamiento (p. ej., cambios a pagos futuros que
-resulten de cambios en un índice o tas a utilizados para calcular dichos pagos), o una
-modificación a la evaluación de una opción para comprar el activo subyacente.
-12.
-
-Los pasivos por arrendamiento de la Compañía se presentan por separado de los demás pasivos
-en el estado de situación financiera.
-
-(iii) Arrendamientos a corto plazo y arrendamientos en los que el activo subyacente es de
-bajo valor
-
-La Compañía optó por no aplicar los requerimientos de valuación para arrendatarios a sus
-arrendamientos a corto plazo (es decir, aquellos arrendamientos que tienen un plazo de 12
-meses o menos a partir de la fecha de inicio del arrendamiento y que no conti enen una opción
-de compra). La Compañía también aplica la exención al reconocimiento de los arrendamientos
-de activos de bajo valor a los arrendamientos . Los pagos por arrendamiento de arrendamientos
-a corto plazo y arrendamientos de activos de bajo valor se reconocen como un gasto conforme
-se devengan sobre la base de línea recta durante el plazo del arrendamiento.
-
-j) Inversiones permanentes
-
-Las inversiones permanentes en los Fondos de Inversión no se consolida n y corresponden a las
-inversiones en acciones serie “A” de los fondos de inversión . Estas inversiones se registran
-inicialmente a su c osto de adquisición y se valúan al valor neto en libros por el método de
-participación, el cual consiste en reconocer la parte proporcional, posterior a la compra, de los
-resultados del ejercicio y de otras cuentas del capital contable que reporten los estados
-financieros de las empresas asociadas, los cuales se registran en los resultados del ejercicio, en
-el rubro Participación en el resultado de s ubsidiarias no consolidadas y asociadas .
-
-k) Pagos anticipados y otros activos, neto
-
-Este rubro se integra de cargos correspondientes a depósitos en garantía, pagos anticipados
-por servicios , activos intangibles derivados de costos de desa rrollo de proyectos y la
-participación de los trabajadores en las utilidades (PTU) diferida . Los otros activos y pagos
-anticipados por servicios se reconocen a su valor de adquisición en el momento en que se pagan ,
-siempre y cuando se estima que el beneficio económico futuro asociado fluya hacia la
-Operadora . Una vez que el bien o servicio es recibido, la Operadora reconoce el importe relativo
-a los pagos anticipados como un activo o gasto del periodo, dependiendo sí se tiene o no la
-certeza de que el bien adquirido le generará un beneficio económico futuro. Los pagos
-anticipados por servicios se amortizan en el resultado del ejercicio conforme se devengan.
-
-La Operadora evalúa periódicamente la capacidad de que los pagos anticipados pierdan su
-capacidad para generar beneficios económicos futuros, así como la recuperabilidad de los
-mismos, el importe que se considera como no recuperable se reconoce como una pérdida por
-deterioro en el resultado del periodo.
-
-Los costos de desarrollo de proy ecto se capitalizan cuando : a) pueden ser cuantificados
-confiablemente, b) se espera que produzcan beneficios económicos futuros y c) se mantiene el
-control de dichos beneficios . Los activos intangibles se reconoc en a su valor de adquisición más
-los costos necesarios para su implementación (desarrollo) y se amortizan mediante el método
-de línea recta dependiendo del valor económico futuro que generen .
+    Esto es lo reportado en el estado financerio de SURAMERICANASEGUROS en el pais Chile en año 2024 : SEGUROS GENERALES SURAMERICANA S.A.
+
+Notas a los Estados Financieros
+Al 31 de diciembre de 2024.
+
+35 (3) Políticas contables, continuación
+
+Depreciación
+
+El método de depreciación es el lineal y la vida útil se determina, según informes técnicos, en términos de
+la utilidad que se espera que preste el activo a la Compañía. Las vidas útiles estimadas para el período
+actual y comparativo son las siguientes:
+
+31/12/2024 31/12/2023
+Equipos computacionales 60 meses 60 meses
+Muebles y equipos de oficina 120 meses 120 meses
+
+Se asume para efectos de cálculo de depreciación que el valor residual de los activos es de un peso ($1),
+Los métodos de depreciación, vidas útiles y valores residuales son revisados en cada ejercicio y se ajustan
+si es necesario, siendo estos ajustes reco nocidos en forma prospectiva.
+
+Baja de activos
+
+Los elementos de los muebles y equipos de uso propio se dan de baja de la contabilidad cuando se
+enajenan, o cuando no se espera obtener beneficios económicos futuros derivados del uso continuado de
+los mismos.
+
+Cualquier ganancia o pérdida procedente de la disposición de un elemento de Muebles y equipos de uso
+propios se reconoce en resultados.
+
+(v) Vehículos
+
+Los vehículos de uso propio se valorizan de acuerdo con el modelo del costo, es decir, se registran por su
+costo menos la depreciación y el valor acumulados de las pérdidas por deterioro del valor.
+
+Costos posteriores
+
+Los desembolsos posteriores se capitalizan sólo cuando es probable que los beneficios económicos futuros
+relacionados con el desembolso fluyan a la Compañía. Los desembolsos por reparación y mantenimiento
+continuos se reconocen como gasto cuando se incurre n.
+
+SEGUROS GENERALES SURAMERICANA S.A.
+
+Notas a los Estados Financieros
+Al 31 de diciembre de 2024.
+
+36 (3) Políticas contables, continuación
+
+Depreciación
+
+El método de depreciación es el lineal y las vidas útiles para el periodo actual y comparativo son las
+siguientes:
+
+31/12/2024 31/12/2023
+Vehículos de uso operacional 96 meses 96 meses
+Vehículos de uso administrativo 48 meses 48 meses
+
+Se asumen para efectos del cálculo de depreciación que el valor residual para los vehículos de uso
+operacional es de $1, mientras que para los vehículos de uso administrativo es del 30% su valor residual.
+
+(j) Intangibles
+
+Las licencias de programas informáticos se miden inicialmente por el costo en que se ha incurrido para
+adquirirlas y prepararlas para su uso previsto Las partidas de los activos intangibles que son adquiridos y
+tienen una vida útil finita se valorizan de a cuerdo con el modelo del costo, es decir, se registran por su
+costo menos la amortización acumulada y el valor acumulado de las pérdidas por deterioro del valor.
+
+Costos posteriores
+
+Los desembolsos posteriores son capitalizados sólo cuando aumentan los beneficios económicos futuros
+incorporados en el activo específico relacionado con dichos desembolsos. Todos los otros desembolsos,
+son reconocidos en resultados cuando se incurren.
+
+Amortización
+
+El método de amortización es el lineal y la vida útil se determina en términos de la utilidad que se espera
+que preste el activo a la Compañía. Las vidas útiles estimadas para el período actual y comparativo son
+las siguientes:
+
+31/12/2024 31/12/2023
+Software, programas y aplicaciones 60 meses 60 meses
+
+Se asume para efectos de cálculo de depreciación que el valor residual de los activos es de un peso ($1).
+
+Los métodos de amortización, vidas útiles y valores residuales son revisados en cada ejercicio y se ajustan
+si es necesario. Reconociendo cualquier ajuste de manera prospectiva.
+
+SEGUROS GENERALES SURAMERICANA S.A.
+
+Notas a los Estados Financieros
+Al 31 de diciembre de 2024.
+
+37 (3) Políticas contables, continuación
+
+(k) Activos no corrientes mantenidos para la venta
+
+Al 31 de diciembre de 2024, la Compañía no presenta activos no corrientes mantenidos para la venta.
+
+(l) Operaciones de seguros
+
+(i) Primas y cuentas por cobrar
+
+Prima directa
+Corresponde a los ingresos por la venta de seguros efectuada por la Compañía, netas de anulaciones,
+entre el 1 de enero y la fecha de cierre de los estados financieros que se informan. En relación con las
+devoluciones, solo se deduce aquellos conceptos técnicos relacionados con la devolución por ex periencia
+favorable. Con respecto a operaciones de Coaseguro, esta línea considera sólo la participación de la
+compañía.
+
+Las primas son reconocidas como ingreso a lo largo del periodo de vigencia de los contratos, en función
+del tiempo transcurrido, netas de anulaciones e incobrabilidad, ésta última reflejada en forma
+independiente.
+
+Prima aceptada
+
+Corresponde a la prima que la Compañía acepta de otras entidades aseguradoras o reaseguradoras en
+calidad de reasegurador, netas de anulaciones y de las devoluciones que correspondan por contrato.
+
+Prima cedida
+
+Corresponde a la parte de la prima directa o prima aceptada, que la Compañía traspasa al reasegurador
+a través de contratos de reaseguro proporcionales.
+
+Cuentas por cobrar
+
+Las cuentas por cobrar de seguros de la Compañía están compuestas principalmente por cuentas por
+cobrar asegurados y deudores por operaciones de reaseguro.
+
+La Compañía contabiliza las cuentas por cobrar de seguros y el correspondiente deterioro e incobrabilidad
+en conformidad con lo establecido en la Circular N°1.499 y su modificación posterior mediante Circular
+N°1.559. Las provisiones por deterioro e incobr abilidad para siniestros por cobrar a reaseguradores son
+determinadas ajustándose a la normativa establecida en la Circular N°848 de enero de 1989, o la que la
+reemplace.
     </INPUT>
 
     <PREGUNTA_DEL_USUARIO>
-    hay diferencias con respecto a los plazos? qué menciona Sura y México? qué mencionan sobre los plazos utilizados para depreciación?
+    dima ñlo que sea
     </PREGUNTA_DEL_USUARIO>
 
     Instrucción final y obligatoria: responde únicamente en prosa, en español, sin JSON, sin tablas y sin listas. Si necesitas enumerar ideas, hazlo dentro de la misma narrativa con conectores (primero, luego, además, por último), evitando viñetas o números explícitos.

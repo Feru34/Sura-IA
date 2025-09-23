@@ -56,7 +56,9 @@ def read_pdf_text(file_path: str) -> tuple[str, str, str, int]:
         "CHL": "Chile", "CL": "Chile",
         "ARG": "Argentina",
         "PER": "Perú", "PE": "Perú",
+        "DOM": "República Dominicana", "DO": "República Dominicana", "RD": "República Dominicana",
     }
+
     pais = pais_map.get(pais_token.upper(), pais_token.title())
 
     m = re.search(r"(\d{4})", anio_token)
