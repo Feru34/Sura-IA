@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>AI PDF Analyst · Azure</title>
+  <title>Analista PPCC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Inter (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,7 +50,7 @@
 
     <section id="result-card" class="card result-card hidden">
       <h2 class="title">Resultado</h2>
-      <pre id="result" class="result"></pre>
+      <article id="result" class="result markdown-body"></article>
     </section>
   </main>
 
@@ -63,31 +63,50 @@
     <div class="loader-text">Analizando...</div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+
   <script>
     const form = document.getElementById('analyze-form');
     const resultCard = document.getElementById('result-card');
     const resultEl = document.getElementById('result');
     const backdrop = document.getElementById('backdrop');
-
+  
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       resultCard.classList.add('hidden');
       resultEl.textContent = '';
       backdrop.classList.remove('hidden');
-
+  
       const formData = new FormData(form);
-
+  
       try {
-        const res = await fetch('/analyze', {
-          method: 'POST',
-          body: formData
-        });
+        const res = await fetch('/analyze', { method: 'POST', body: formData });
         const data = await res.json();
-        if (!data.ok) {
-          throw new Error(data.error || 'Error desconocido');
+        if (!data.ok) throw new Error(data.error || 'Error desconocido');
+  
+        const md = data.answer || "";
+  
+        // Opciones de marked
+        if (window.marked) {
+          marked.setOptions({ gfm: true, breaks: true, headerIds: true, mangle: false });
         }
-        resultEl.textContent = data.answer;
+  
+        // Compatibilidad con versiones (parse vs función directa)
+        const parsed = (marked.parse ? marked.parse(md) : marked(md));
+        const html = DOMPurify.sanitize(parsed);
+  
+        resultEl.innerHTML = html;
         resultCard.classList.remove('hidden');
+  
+        // Scroll horizontal para tablas en móvil
+        resultEl.querySelectorAll('table').forEach(tbl => {
+          const wrap = document.createElement('div');
+          wrap.className = 'table-responsive';
+          tbl.parentNode.insertBefore(wrap, tbl);
+          wrap.appendChild(tbl);
+        });
+  
       } catch (err) {
         resultEl.textContent = '⚠️ ' + (err.message || err);
         resultCard.classList.remove('hidden');

@@ -93,3 +93,98 @@ body{
 
 /* Footer */
 .footer{max-width:980px; margin:24px auto 40px; padding:0 16px; color:var(--muted); text-align:center}
+
+/* El resultado ya no es <pre>; quita el preformato */
+.result-card .result{
+  white-space: normal;
+  color: #E9EEF9;
+  background: rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:20px;
+  max-height:520px;
+  overflow:auto;
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* Títulos Markdown (#, ##, ###) */
+.result h1, .result h2, .result h3, .result h4 {
+  margin: 1.2em 0 .6em;
+  line-height: 1.25;
+}
+.result h1 { font-size: 1.8rem; }
+.result h2 { font-size: 1.5rem; border-bottom:1px solid rgba(255,255,255,.08); padding-bottom:.25rem; }
+.result h3 { font-size: 1.25rem; }
+.result h4 { font-size: 1.1rem; }
+
+/* Párrafos, listas */
+.result p { margin: .6em 0; }
+.result ul, .result ol { margin: .6em 0 .6em 1.4em; }
+.result li { margin: .25em 0; }
+
+/* Enlaces */
+.result a { color: var(--azure); text-decoration: underline; }
+
+/* Citas */
+.result blockquote{
+  margin: .8em 0; padding: .6em .9em;
+  border-left: 3px solid var(--azure);
+  background: rgba(255,255,255,.04);
+  border-radius: 8px;
+}
+
+/* Código inline y bloques */
+.result code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background: rgba(0,0,0,.35);
+  padding: .15em .35em;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.result pre{
+  background: rgba(0,0,0,.35);
+  padding: 12px;
+  border-radius: 10px;
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.result pre > code{
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+
+/* Tablas (GFM) */
+.result table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 14px;
+}
+.result th, .result td{
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 8px 10px;
+  vertical-align: top;
+}
+.result thead th{
+  background: rgba(255,255,255,.06);
+  font-weight: 600;
+}
+.result tbody tr:nth-child(even){
+  background: rgba(255,255,255,.03);
+}
+/* Contenedor para scroll horizontal de tablas en móvil */
+.table-responsive{
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+}
+
+/* Separadores */
+.result hr{
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin: 1.2em 0;
+}
