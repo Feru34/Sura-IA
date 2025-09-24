@@ -13,7 +13,7 @@
   <header class="app-header">
     <div class="brand">
       <img src="{{ url_for('static', filename='sura.svg') }}" alt="Azure" class="azure-logo" />
-      <span class="brand-text">AI PDF Analyst</span>
+      <span class="brand-text">Analista de politicas contables</span>
     </div>
     <div class="header-right">
       <span class="tag">Flask</span>
@@ -23,10 +23,10 @@
 
   <main class="container">
     <section class="card">
-      <h1 class="title">Analiza tu PDF con IA</h1>
+      <h1 class="title">Validación de Políticas Contables - Grupo Sura</h1>
       <p class="subtitle">
-        Sube un PDF de políticas contables o estados financieros y formula tu pregunta. 
-        El asistente (gpt-5-nano) responderá con un análisis claro y citando el contenido proporcionado.
+          Sube un PDF de políticas contables o estados financieros de Sura y formula tu pregunta. 
+          El asistente responderá con un análisis claro y citando el contenido proporcionado.
       </p>
 
       <form id="analyze-form" class="form" enctype="multipart/form-data">
@@ -60,7 +60,7 @@
 
   <div id="backdrop" class="backdrop hidden">
     <div class="loader"></div>
-    <div class="loader-text">Analizando PDF…</div>
+    <div class="loader-text">Analizando...</div>
   </div>
 
   <script>
