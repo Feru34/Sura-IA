@@ -21,7 +21,14 @@ UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
 EMBEDDINGS_DIR = BASE_DIR / "embeddings"
 EMBEDDINGS_DIR.mkdir(exist_ok=True)
+PRELOADED_DIR = BASE_DIR / "EEFF_cargados"
 SURA_PDF_PATH = BASE_DIR / "sura-EEFF-2024-4t.pdf"
+
+PRELOADED_FILES = {
+    "sura_co_2024_generales": PRELOADED_DIR / "24 Suramericana- Seguros Generales Dic-24 (firmado).pdf",
+    "sura_rd_2024": PRELOADED_DIR / "Final EFs Seguros Sura S. A 2024 Dominicana.pdf",
+    "mex_038_2024_sim": PRELOADED_DIR / "MEX038 Informe auditado 2024 - SIM.pdf",
+}
 
 ALLOWED_EXTENSIONS = {"pdf"}
 
@@ -238,18 +245,33 @@ class KnowledgeBase:
 
 # Inicializar base de conocimiento de Sura al arrancar la aplicación
 sura_kb = KnowledgeBase("sura")
+kb_registry: Dict[str, KnowledgeBase] = {}
 
 @app.before_request
-def initialize_sura_knowledge():
-    """Inicializa la base de conocimiento de Sura al arrancar."""
+def initialize_kbs():
+    """Carga/Construye la KB de Sura y las KBs precargadas una sola vez al iniciar."""
+    # SURA
     if SURA_PDF_PATH.exists():
         try:
             sura_kb.build_from_pdf(str(SURA_PDF_PATH), force_rebuild=False)
-            print(f"Base de conocimiento de Sura inicializada con {len(sura_kb.chunks)} chunks")
+            print(f"[INIT] SURA KB: {len(sura_kb.chunks)} chunks")
         except Exception as e:
-            print(f"Error al inicializar base de conocimiento de Sura: {e}")
+            print(f"[INIT][ERROR] SURA KB: {e}")
     else:
-        print(f"ADVERTENCIA: No se encontró el archivo {SURA_PDF_PATH}")
+        print(f"[INIT][WARN] No se encontró {SURA_PDF_PATH}")
+
+    # PRESETS
+    for key, path in PRELOADED_FILES.items():
+        try:
+            if not path.exists():
+                print(f"[INIT][WARN] No existe preset '{key}': {path}")
+                continue
+            kb = KnowledgeBase(f"preset_{key}")
+            kb.build_from_pdf(str(path), force_rebuild=False)
+            kb_registry[key] = kb
+            print(f"[INIT] PRESET '{key}': {len(kb.chunks)} chunks")
+        except Exception as e:
+            print(f"[INIT][ERROR] PRESET '{key}': {e}")
 
 
 def generate_comparison_prompt(sura_context: List[str], other_context: List[str], 
@@ -292,64 +314,69 @@ def generate_comparison_prompt(sura_context: List[str], other_context: List[str]
 
 @app.route("/", methods=["GET"])
 def index():
-    return render_template("index.html")
+    preset_options = []
+    for key, path in PRELOADED_FILES.items():
+        label = path.stem  # o arma tu propio label bonito
+        preset_options.append({"key": key, "label": label, "file": str(path.name)})
+    return render_template("index.html", preset_options=preset_options)
 
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
     try:
-        if "pdf" not in request.files:
-            return jsonify({"ok": False, "error": "No se envió archivo PDF"}), 400
-        
-        file = request.files["pdf"]
         question = (request.form.get("question") or "").strip()
-        
-        if not file or file.filename == "":
-            return jsonify({"ok": False, "error": "Archivo PDF inválido"}), 400
-        if not allowed_file(file.filename):
-            return jsonify({"ok": False, "error": "Formato no permitido (solo .pdf)"}), 400
+        preset_key = (request.form.get("preset_key") or "").strip()
+        file = request.files.get("pdf")
+
         if not question:
             return jsonify({"ok": False, "error": "La pregunta no puede estar vacía"}), 400
-        
         if not os.getenv("OPENAI_API_KEY"):
             return jsonify({"ok": False, "error": "OPENAI_API_KEY no está configurada"}), 500
-        
-        # Verificar que la base de conocimiento de Sura esté inicializada
         if not sura_kb.chunks:
             return jsonify({"ok": False, "error": "Base de conocimiento de Sura no inicializada"}), 500
-        
-        # Guardar y procesar el PDF subido
-        filename = secure_filename(file.filename)
-        file_path = UPLOAD_DIR / filename
-        file.save(str(file_path))
-        
-        # Crear base de conocimiento temporal para el PDF subido
-        other_kb = KnowledgeBase(f"temp_{filename}")
-        other_kb.build_from_pdf(str(file_path), force_rebuild=True)
-        
-        # Buscar chunks relevantes en ambas bases de conocimiento
+
+        # Determinar la KB "otra" (preset o upload)
+        other_kb = None
+        temp_file_path = None
+
+        if preset_key:
+            other_kb = kb_registry.get(preset_key)
+            if other_kb is None:
+                return jsonify({"ok": False, "error": f"Preset '{preset_key}' no encontrado"}), 400
+        else:
+            # flujo de upload
+            if not file or file.filename == "":
+                return jsonify({"ok": False, "error": "Sube un PDF o selecciona un EEFF precargado"}), 400
+            if not allowed_file(file.filename):
+                return jsonify({"ok": False, "error": "Formato no permitido (solo .pdf)"}), 400
+
+            filename = secure_filename(file.filename)
+            temp_file_path = UPLOAD_DIR / filename
+            file.save(str(temp_file_path))
+
+            # KB temporal para el PDF subido
+            other_kb = KnowledgeBase(f"temp_{filename}")
+            other_kb.build_from_pdf(str(temp_file_path), force_rebuild=True)
+
+        # Recuperación de contextos
         sura_results = sura_kb.search_similar(question, top_k=3)
         other_results = other_kb.search_similar(question, top_k=3)
-        
-        # Extraer solo los textos de los chunks más relevantes
+
         sura_context = [chunk for chunk, _ in sura_results]
         other_context = [chunk for chunk, _ in other_results]
-        
-        # Generar prompt de comparación
+
         prompt = generate_comparison_prompt(
-            sura_context, 
-            other_context, 
+            sura_context,
+            other_context,
             question,
             other_kb.metadata
         )
-        
+
         saved_path = save_prompt_to_file(prompt, "debug/prompt_dump.txt")
         print(f"Prompt guardado en: {saved_path} (longitud: {len(prompt)} caracteres)")
-        
-        
-        # Llamar a la API de OpenAI
+
         response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",  # Cambiado a un modelo más estable
+            model="gpt-4-turbo-preview",
             messages=[
                 {"role": "system", "content": "Eres un experto analista financiero."},
                 {"role": "user", "content": prompt}
@@ -357,19 +384,20 @@ def analyze():
             temperature=0.1,
             max_tokens=2000
         )
-        
         output_text = response.choices[0].message.content
-        
-        # Limpiar archivos temporales
+
+        # Limpieza si hubo archivo temporal
         try:
-            os.remove(file_path)
-            if other_kb.embeddings_path.exists():
+            if temp_file_path:
+                os.remove(temp_file_path)
+            # si creaste KB temporal, borra su pickle
+            if not preset_key and other_kb.embeddings_path.exists():
                 os.remove(other_kb.embeddings_path)
         except:
             pass
-        
+
         return jsonify({"ok": True, "answer": output_text}), 200
-    
+
     except Exception as e:
         app.logger.exception("Error en /analyze")
         return jsonify({"ok": False, "error": f"Error interno: {str(e)}"}), 500

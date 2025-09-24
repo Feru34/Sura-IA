@@ -188,3 +188,48 @@ body{
   border-top: 1px solid rgba(255,255,255,.08);
   margin: 1.2em 0;
 }
+
+/* Botones de presets (segmented/grid) */
+.preset-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 6px;
+}
+.preset-option{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+  text-align: center;
+  min-height: 44px;
+}
+.preset-option:hover{ transform: translateY(-1px); }
+.preset-option.selected{
+  background: rgba(0,120,212,.16);
+  border-color: rgba(0,120,212,.45);
+  box-shadow: 0 6px 16px rgba(0,120,212,.25);
+}
+.preset-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:6px;
+}
+.link-btn{
+  background: transparent;
+  border: none;
+  color: var(--azure);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 600;
+}
+

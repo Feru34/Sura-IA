@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <title>Analista - MS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Inter (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
@@ -25,14 +24,32 @@
     <section class="card">
       <h1 class="title">Validación de Políticas Contables - Grupo Sura</h1>
       <p class="subtitle">
-          Sube o selecciona los estados financieros de alguna filial y formula tu pregunta. 
-          El asistente responderá con un análisis claro y citando el contenido proporcionado.
+        Sube o selecciona los estados financieros de alguna filial y formula tu pregunta. 
+        El asistente responderá con un análisis claro y citando el contenido proporcionado.
       </p>
 
       <form id="analyze-form" class="form" enctype="multipart/form-data">
+        <!-- Selección de EEFF precargados -->
         <div class="form-field">
-          <label for="pdf" class="label">Archivo PDF</label>
-          <input id="pdf" name="pdf" type="file" accept=".pdf" class="input-file" required />
+          <label class="label">EEFF precargados (opcional)</label>
+          <div class="preset-grid" id="preset-grid">
+            {% for opt in preset_options %}
+              <button type="button" class="preset-option" data-key="{{ opt.key }}" title="{{ opt.file }}">
+                {{ opt.label }}
+              </button>
+            {% endfor %}
+          </div>
+          <div class="preset-actions">
+            <button type="button" id="clear-preset" class="link-btn">Quitar selección</button>
+            <small class="hint">Si seleccionas un EEFF precargado, no necesitas subir un PDF.</small>
+          </div>
+          <input type="hidden" id="preset_key" name="preset_key" value="">
+        </div>
+
+        <!-- Upload manual (alternativa) -->
+        <div class="form-field">
+          <label for="pdf" class="label">Archivo PDF (alternativa)</label>
+          <input id="pdf" name="pdf" type="file" accept=".pdf" class="input-file" />
           <small class="hint">Máx. 20 MB — se procesa localmente en el servidor</small>
         </div>
 
@@ -43,7 +60,7 @@
 
         <div class="actions">
           <button class="btn btn-primary" type="submit">Analizar</button>
-          <button class="btn btn-secondary" type="reset">Limpiar</button>
+          <button class="btn btn-secondary" type="reset" id="btn-reset">Limpiar</button>
         </div>
       </form>
     </section>
@@ -71,42 +88,72 @@
     const resultCard = document.getElementById('result-card');
     const resultEl = document.getElementById('result');
     const backdrop = document.getElementById('backdrop');
-  
+
+    // Presets UI
+    const presetGrid = document.getElementById('preset-grid');
+    const presetInput = document.getElementById('preset_key');
+    const fileInput = document.getElementById('pdf');
+    const clearPresetBtn = document.getElementById('clear-preset');
+    const resetBtn = document.getElementById('btn-reset');
+
+    function selectPreset(btn) {
+      // marca visualmente
+      [...presetGrid.querySelectorAll('.preset-option')].forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      // setea hidden input
+      presetInput.value = btn.dataset.key;
+      // limpia y deshabilita el upload (no obligatorio)
+      fileInput.value = '';
+      fileInput.removeAttribute('required');
+      fileInput.disabled = true;
+    }
+
+    function clearPreset() {
+      [...presetGrid.querySelectorAll('.preset-option')].forEach(b => b.classList.remove('selected'));
+      presetInput.value = '';
+      fileInput.disabled = false;
+      // el upload sigue opcional; si quieres hacerlo obligatorio cuando no haya preset:
+      // fileInput.setAttribute('required', 'required');
+    }
+
+    presetGrid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.preset-option');
+      if (!btn) return;
+      selectPreset(btn);
+    });
+
+    clearPresetBtn.addEventListener('click', clearPreset);
+    resetBtn.addEventListener('click', clearPreset);
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       resultCard.classList.add('hidden');
       resultEl.textContent = '';
       backdrop.classList.remove('hidden');
-  
+
       const formData = new FormData(form);
-  
+
       try {
         const res = await fetch('/analyze', { method: 'POST', body: formData });
         const data = await res.json();
         if (!data.ok) throw new Error(data.error || 'Error desconocido');
-  
+
         const md = data.answer || "";
-  
-        // Opciones de marked
-        if (window.marked) {
-          marked.setOptions({ gfm: true, breaks: true, headerIds: true, mangle: false });
-        }
-  
-        // Compatibilidad con versiones (parse vs función directa)
+        marked.setOptions({ gfm: true, breaks: true, headerIds: true, mangle: false });
         const parsed = (marked.parse ? marked.parse(md) : marked(md));
         const html = DOMPurify.sanitize(parsed);
-  
+
         resultEl.innerHTML = html;
         resultCard.classList.remove('hidden');
-  
-        // Scroll horizontal para tablas en móvil
+
+        // tablas responsive
         resultEl.querySelectorAll('table').forEach(tbl => {
           const wrap = document.createElement('div');
           wrap.className = 'table-responsive';
           tbl.parentNode.insertBefore(wrap, tbl);
           wrap.appendChild(tbl);
         });
-  
+
       } catch (err) {
         resultEl.textContent = '⚠️ ' + (err.message || err);
         resultCard.classList.remove('hidden');
