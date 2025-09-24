@@ -1,5 +1,7 @@
 :root{
   --azure:#0078D4;
+
+  /* Paleta (Dark por defecto) */
   --bg:#0B0F17;
   --surface:#121826;
   --elev:#1A2234;
@@ -8,39 +10,116 @@
   --ok:#22C55E;
   --warn:#F59E0B;
   --err:#EF4444;
+
+  /* Tokens de UI dependientes de tema */
+  --header-bg: rgba(18,24,38,.7);
+  --hairline: rgba(255,255,255,.06);
+  --hairline-strong: rgba(255,255,255,.08);
+  --chip-bg: rgba(255,255,255,.06);
+  --chip-border: rgba(255,255,255,.08);
+  --card-tint: rgba(255,255,255,.02);
+  --result-bg: rgba(0,0,0,.25);
+  --blockquote-bg: rgba(255,255,255,.04);
+  --code-bg: rgba(0,0,0,.35);
+  --table-border: rgba(255,255,255,.15);
+  --table-head-bg: rgba(255,255,255,.06);
+  --table-zebra-bg: rgba(255,255,255,.03);
+
   --radius:16px;
   --shadow:0 10px 24px rgba(0,0,0,.35);
 }
+
+/* Forzar valores explícitos por si el script no corre */
+html[data-theme="dark"]{
+  --bg:#0B0F17;
+  --surface:#121826;
+  --elev:#1A2234;
+  --text:#E6EAF2;
+  --muted:#A6B0C3;
+  --ok:#22C55E;
+  --warn:#F59E0B;
+  --err:#EF4444;
+
+  --header-bg: rgba(18,24,38,.7);
+  --hairline: rgba(255,255,255,.06);
+  --hairline-strong: rgba(255,255,255,.08);
+  --chip-bg: rgba(255,255,255,.06);
+  --chip-border: rgba(255,255,255,.08);
+  --card-tint: rgba(255,255,255,.02);
+  --result-bg: rgba(0,0,0,.25);
+  --blockquote-bg: rgba(255,255,255,.04);
+  --code-bg: rgba(0,0,0,.35);
+  --table-border: rgba(255,255,255,.15);
+  --table-head-bg: rgba(255,255,255,.06);
+  --table-zebra-bg: rgba(255,255,255,.03);
+}
+
+html[data-theme="light"]{
+  --bg:#F5F7FB;
+  --surface:#FFFFFF;
+  --elev:#F2F5FC; /* superficie elevada */
+  --text:#0B0F17;
+  --muted:#506077; /* texto secundario */
+  --ok:#16A34A;
+  --warn:#B45309;
+  --err:#DC2626;
+
+  --header-bg: rgba(255,255,255,.75);
+  --hairline: rgba(0,0,0,.10);
+  --hairline-strong: rgba(0,0,0,.14);
+  --chip-bg: rgba(0,0,0,.06);
+  --chip-border: rgba(0,0,0,.12);
+  --card-tint: rgba(0,0,0,.02);
+  --result-bg: rgba(0,0,0,.04);
+  --blockquote-bg: rgba(0,0,0,.04);
+  --code-bg: rgba(0,0,0,.06);
+  --table-border: rgba(0,0,0,.12);
+  --table-head-bg: rgba(0,0,0,.06);
+  --table-zebra-bg: rgba(0,0,0,.03);
+}
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
   font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
   color:var(--text);
-  background: radial-gradient(60rem 60rem at -10% -10%, rgba(0,120,212,0.15), transparent 40%),
-              radial-gradient(60rem 60rem at 110% -10%, rgba(0,120,212,0.12), transparent 40%),
-              var(--bg);
+  background:
+    radial-gradient(60rem 60rem at -10% -10%, rgba(0,120,212,0.12), transparent 40%),
+    radial-gradient(60rem 60rem at 110% -10%, rgba(0,120,212,0.10), transparent 40%),
+    var(--bg);
 }
 
 /* Header */
 .app-header{
   display:flex; align-items:center; justify-content:space-between;
-  padding:16px 24px; background:rgba(18,24,38,.7); backdrop-filter: blur(6px);
-  border-bottom:1px solid rgba(255,255,255,.06); position:sticky; top:0; z-index:3;
+  padding:16px 24px; background:var(--header-bg); backdrop-filter: blur(6px);
+  border-bottom:1px solid var(--hairline); position:sticky; top:0; z-index:3;
 }
 .brand{display:flex; align-items:center; gap:12px}
 .azure-logo{height:28px}
 .brand-text{font-weight:700; letter-spacing:.2px}
+.header-right{display:flex; align-items:center; gap:8px}
 .header-right .tag{
-  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08);
-  padding:6px 10px; border-radius:999px; font-size:12px; margin-left:8px;
+  background:var(--chip-bg); border:1px solid var(--chip-border);
+  padding:6px 10px; border-radius:999px; font-size:12px;
 }
+
+/* Botón de icono (tema) */
+.icon-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px;
+  border:none; background:transparent; cursor:pointer; border-radius:10px;
+  transition: background .18s ease, transform .06s ease, box-shadow .18s ease;
+}
+.icon-btn:hover{ background: var(--chip-bg); transform: translateY(-1px); }
+.icon-btn img{ display:block; width:28px; height:28px; }
 
 /* Layout */
 .container{max-width:980px; margin:40px auto; padding:0 16px}
 .card{
-  background:linear-gradient(0deg, rgba(255,255,255,.02), rgba(255,255,255,.02)), var(--surface);
-  border:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(0deg, var(--card-tint), var(--card-tint)), var(--surface);
+  border:1px solid var(--hairline);
   border-radius:var(--radius); box-shadow:var(--shadow);
   padding:24px; margin-bottom:20px;
 }
@@ -52,7 +131,7 @@ body{
 .form-field{display:flex; flex-direction:column; gap:8px}
 .label{font-weight:600}
 .input-file,.textarea{
-  width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.08);
+  width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--hairline-strong);
   background:var(--elev); color:var(--text); outline: none;
 }
 .input-file::file-selector-button{
@@ -63,16 +142,24 @@ body{
 .actions{display:flex; gap:10px; margin-top:4px}
 .btn{
   border:none; padding:12px 16px; border-radius:12px; cursor:pointer; font-weight:600;
-  transition: transform .06s ease, box-shadow .2s ease;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
 }
 .btn:hover{transform: translateY(-1px)}
 .btn-primary{background:var(--azure); color:white; box-shadow:0 6px 16px rgba(0,120,212,.35)}
-.btn-secondary{background:rgba(255,255,255,.08); color:var(--text)}
+.btn-secondary{background:var(--chip-bg); color:var(--text); border:1px solid var(--chip-border)}
 
+/* Resultado */
 .result-card .result{
-  white-space:pre-wrap; color:#E9EEF9; background:rgba(0,0,0,.25);
-  border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:16px;
-  max-height:520px; overflow:auto;
+  white-space: normal;
+  color: var(--text);
+  background: var(--result-bg);
+  border:1px solid var(--hairline);
+  border-radius:12px;
+  padding:20px;
+  max-height:520px;
+  overflow:auto;
+  line-height:1.6;
+  font-size:15px;
 }
 
 /* Backdrop + loader */
@@ -94,27 +181,13 @@ body{
 /* Footer */
 .footer{max-width:980px; margin:24px auto 40px; padding:0 16px; color:var(--muted); text-align:center}
 
-/* El resultado ya no es <pre>; quita el preformato */
-.result-card .result{
-  white-space: normal;
-  color: #E9EEF9;
-  background: rgba(0,0,0,.25);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:12px;
-  padding:20px;
-  max-height:520px;
-  overflow:auto;
-  line-height:1.6;
-  font-size:15px;
-}
-
-/* Títulos Markdown (#, ##, ###) */
+/* Títulos Markdown */
 .result h1, .result h2, .result h3, .result h4 {
   margin: 1.2em 0 .6em;
   line-height: 1.25;
 }
 .result h1 { font-size: 1.8rem; }
-.result h2 { font-size: 1.5rem; border-bottom:1px solid rgba(255,255,255,.08); padding-bottom:.25rem; }
+.result h2 { font-size: 1.5rem; border-bottom:1px solid var(--hairline); padding-bottom:.25rem; }
 .result h3 { font-size: 1.25rem; }
 .result h4 { font-size: 1.1rem; }
 
@@ -130,24 +203,24 @@ body{
 .result blockquote{
   margin: .8em 0; padding: .6em .9em;
   border-left: 3px solid var(--azure);
-  background: rgba(255,255,255,.04);
+  background: var(--blockquote-bg);
   border-radius: 8px;
 }
 
 /* Código inline y bloques */
 .result code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  background: rgba(0,0,0,.35);
+  background: var(--code-bg);
   padding: .15em .35em;
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid var(--hairline-strong);
 }
 .result pre{
-  background: rgba(0,0,0,.35);
+  background: var(--code-bg);
   padding: 12px;
   border-radius: 10px;
   overflow: auto;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid var(--hairline-strong);
 }
 .result pre > code{
   background: transparent;
@@ -163,17 +236,18 @@ body{
   font-size: 14px;
 }
 .result th, .result td{
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid var(--table-border);
   padding: 8px 10px;
   vertical-align: top;
 }
 .result thead th{
-  background: rgba(255,255,255,.06);
+  background: var(--table-head-bg);
   font-weight: 600;
 }
 .result tbody tr:nth-child(even){
-  background: rgba(255,255,255,.03);
+  background: var(--table-zebra-bg);
 }
+
 /* Contenedor para scroll horizontal de tablas en móvil */
 .table-responsive{
   width: 100%;
@@ -185,7 +259,7 @@ body{
 /* Separadores */
 .result hr{
   border: 0;
-  border-top: 1px solid rgba(255,255,255,.08);
+  border-top: 1px solid var(--hairline);
   margin: 1.2em 0;
 }
 
@@ -202,8 +276,8 @@ body{
   justify-content: center;
   padding: 10px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
+  border: 1px solid var(--hairline-strong);
+  background: var(--chip-bg);
   color: var(--text);
   cursor: pointer;
   font-weight: 600;
@@ -232,4 +306,3 @@ body{
   padding: 0;
   font-weight: 600;
 }
-

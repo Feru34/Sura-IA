@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <title>Analista - MS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Aplicar tema antes de pintar estilos para evitar "flash" -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('theme');
+        const theme = (saved === 'Light' || saved === 'Dark') ? saved : 'Dark';
+        document.documentElement.setAttribute('data-theme', theme.toLowerCase());
+      } catch (_) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
@@ -14,9 +28,17 @@
       <img src="{{ url_for('static', filename='sura.svg') }}" alt="Azure" class="azure-logo" />
       <span class="brand-text">Analista de politicas contables</span>
     </div>
+
     <div class="header-right">
       <span class="tag">Flask</span>
       <span class="tag">OpenAI</span>
+
+      <!-- Botón de tema (asume que existen los dos iconos en /static) -->
+      <button type="button" id="theme-toggle" class="icon-btn" title="Cambiar tema" aria-label="Cambiar tema">
+        <img id="theme-icon"
+             src="{{ url_for('static', filename='icon-dark.svg') }}"
+             alt="Modo oscuro" width="28" height="28" />
+      </button>
     </div>
   </header>
 
@@ -97,12 +119,9 @@
     const resetBtn = document.getElementById('btn-reset');
 
     function selectPreset(btn) {
-      // marca visualmente
       [...presetGrid.querySelectorAll('.preset-option')].forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
-      // setea hidden input
       presetInput.value = btn.dataset.key;
-      // limpia y deshabilita el upload (no obligatorio)
       fileInput.value = '';
       fileInput.removeAttribute('required');
       fileInput.disabled = true;
@@ -112,7 +131,7 @@
       [...presetGrid.querySelectorAll('.preset-option')].forEach(b => b.classList.remove('selected'));
       presetInput.value = '';
       fileInput.disabled = false;
-      // el upload sigue opcional; si quieres hacerlo obligatorio cuando no haya preset:
+      // Si quieres hacerlo obligatorio cuando no haya preset:
       // fileInput.setAttribute('required', 'required');
     }
 
@@ -125,6 +144,36 @@
     clearPresetBtn.addEventListener('click', clearPreset);
     resetBtn.addEventListener('click', clearPreset);
 
+    // -------- Tema (Dark/Light) --------
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    function applyTheme(theme /* 'Dark' | 'Light' */) {
+      const t = theme === 'Light' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', theme);
+
+      // Cambiar icono según el tema actual
+      const isDark = theme === 'Dark';
+      themeIcon.src = isDark
+        ? "{{ url_for('static', filename='icon-dark.svg') }}"
+        : "{{ url_for('static', filename='icon-light.svg') }}";
+      themeIcon.alt = isDark ? 'Modo oscuro' : 'Modo claro';
+    }
+
+    function toggleTheme() {
+      const current = localStorage.getItem('theme') || 'Dark';
+      applyTheme(current === 'Dark' ? 'Light' : 'Dark');
+    }
+
+    // Inicializar icono al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme') || 'Dark';
+      applyTheme(saved);
+      themeToggle.addEventListener('click', toggleTheme);
+    });
+
+    // -------- Submit análisis --------
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       resultCard.classList.add('hidden');
