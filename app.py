@@ -48,7 +48,8 @@ def chunk_tokens(document: str, token_limit: int = 500) -> List[str]:
     Divide el documento en chunks basados en tokens.
     Aumenté el límite a 500 tokens para chunks más contextuales.
     """
-    enc = tiktoken.encoding_for_model('gpt-3.5-turbo')
+    # enc = tiktoken.encoding_for_model('gpt-5-mini')
+    enc = tiktoken.encoding_for_model('gpt-5')
     chunks = []
     tokens = enc.encode(document, disallowed_special=())
     
@@ -302,10 +303,10 @@ def generate_comparison_prompt(sura_context: List[str], other_context: List[str]
     5. Si alguna información no está disponible en los fragmentos proporcionados, indícalo claramente
 
     FORMATO DE RESPUESTA:
-    - Comienza con un resumen ejecutivo de las diferencias principales
-    - Detalla las políticas de cada empresa
     - Presenta una tabla comparativa si es apropiado
     - Concluye con las implicaciones de estas diferencias
+    
+    
 
     Responde de manera clara, profesional y citando los documentos cuando sea relevante."""
         
@@ -376,7 +377,7 @@ def analyze():
         print(f"Prompt guardado en: {saved_path} (longitud: {len(prompt)} caracteres)")
 
         response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
+            model="gpt-5",
             messages=[
                 {"role": "system", "content": "Eres un experto analista financiero."},
                 {"role": "user", "content": prompt}
